@@ -1,0 +1,16 @@
+{ createSignal, JSX, ParentProps } from solid-js
+import './Counter.css'
+
+export default function Counter(props: ParentProps): JSX.Element
+  [count, setCount] := createSignal(0);
+  add := () => setCount count() + 1
+  subtract := () => setCount count() - 1
+
+  <div class="counter">
+    <button onClick={subtract}>
+      −
+    <pre>
+      {count()}
+    <button onClick={add}>
+      +
+  <div class="counter-message">{props.children}
